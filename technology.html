@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology &amp; Literature Survey — VAYUYAAN</title>
+<meta name="description" content="Literature survey of drone propulsion: battery, IC engine, hybrid and hydrogen powertrains, key design parameters, and the state of the art in engine-powered UAVs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="mark">🜂</span><span>VAYUYAAN<small>Engine-powered drones · भारत</small></span></a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="technology.html" class="active">Technology</a>
+      <a href="taxonomy.html">Drones &amp; Engines</a>
+      <a href="market.html">Market</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">📚 Literature Survey</span>
+    <h1>Drone Technology &amp; Propulsion — a survey</h1>
+    <p>The physics of why energy source, not motor, sets the endurance–payload ceiling; a comparison of battery, internal-combustion, hybrid and hydrogen powertrains; the design parameters that matter; and the state of the art in engine-powered UAVs.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <div class="toc">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#anatomy">Anatomy of a drone</a></li>
+      <li><a href="#physics">The endurance problem (physics)</a></li>
+      <li><a href="#energy">Energy sources compared</a></li>
+      <li><a href="#hybrid">Hybrid architectures</a></li>
+      <li><a href="#params">Key design parameters</a></li>
+      <li><a href="#sota">State of the art (existing systems)</a></li>
+      <li><a href="#hydrogen">Where hydrogen fits</a></li>
+      <li><a href="#gaps">Research gaps &amp; your angle</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <h2 class="anchor" id="anatomy">1 · Anatomy of a drone</h2>
+  <p class="lede">Every UAV is a stack of six subsystems. A venture usually differentiates on one or two and integrates the rest.</p>
+  <div class="grid cols-3">
+    <div class="card"><h4>Airframe</h4><p>Structure &amp; aerodynamics — multirotor arms, fixed wing, or VTOL hybrid. Sets weight budget and drag.</p></div>
+    <div class="card"><h4>Propulsion</h4><p><strong>Your focus.</strong> Energy source + converter + thrust: battery/motor, engine/prop, or hybrid generator set.</p></div>
+    <div class="card"><h4>Flight controller</h4><p>The autopilot (e.g. Pixhawk/PX4, ArduPilot, or proprietary) — stabilises and navigates.</p></div>
+    <div class="card"><h4>Navigation &amp; sensing</h4><p>GNSS/RTK, IMU, barometer, magnetometer; optionally LiDAR, RGB/multispectral, radar.</p></div>
+    <div class="card"><h4>Comms &amp; C2</h4><p>Radio/telemetry link, RC, and increasingly 4G/5G &amp; BVLOS datalinks.</p></div>
+    <div class="card"><h4>Payload</h4><p>The revenue-generating part: sensors, spray tank, cargo box, or ISR gimbal.</p></div>
+  </div>
+  <div class="note fire"><strong>Strategic note:</strong> the flight controller, GNSS, and comms are largely commoditised. Competing there is hard. Propulsion — where you have deep-tech expertise — is where a small team can build a genuine, patentable advantage.</div>
+
+  <!-- 2 -->
+  <h2 class="anchor" id="physics">2 · The endurance problem — why chemistry is the wall</h2>
+  <p>Two numbers govern how long any aircraft stays up: how much <strong>usable energy</strong> it carries per kilogram (specific energy), and how efficiently it converts that energy to thrust. Batteries lose badly on the first number.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Energy carrier</th><th>Raw specific energy</th><th>Usable after conversion*</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Li-ion battery (pack)</td><td>~150–250 Wh/kg</td><td><strong>~150–250 Wh/kg</strong></td><td>Weight is constant — a flat battery weighs the same as a full one.</td></tr>
+        <tr><td>Li-S / advanced (lab)</td><td>~350–500 Wh/kg</td><td>~300–450 Wh/kg</td><td>Emerging; cycle-life &amp; safety still maturing.</td></tr>
+        <tr><td>Petrol / gasoline</td><td>~12,000 Wh/kg</td><td><strong>~3,000–3,600 Wh/kg</strong></td><td>Small 2-stroke ~25–30% efficient; tank empties as you fly.</td></tr>
+        <tr><td>Diesel / heavy fuel (Jet-A)</td><td>~11,900 Wh/kg</td><td>~3,500–4,500 Wh/kg</td><td>Higher efficiency + single-fuel logistics for defence.</td></tr>
+        <tr><td>Hydrogen (fuel cell)</td><td>~33,000 Wh/kg (fuel only)</td><td>~1,000–2,000 Wh/kg (system)</td><td>Tank &amp; stack mass dominate; excellent if stored well.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="disclaimer">*Usable = raw × conversion efficiency (engine or fuel-cell + drivetrain). Order-of-magnitude figures for intuition, not design values.</p>
+
+  <div class="note"><strong>The takeaway:</strong> even after a small engine throws away ~70% of the fuel's energy as heat, a kilogram of petrol still delivers <strong>10–20× more useful energy</strong> than a kilogram of battery. That gap is why fuel wins for long-endurance and heavy-lift — and it is a <em>chemistry</em> gap that better motors cannot close.</p></div>
+
+  <h4>The multirotor penalty</h4>
+  <p>Multirotors must spend energy just to hover — there is no wing generating free lift. Hover power scales with (weight)^1.5 / √(rotor area). Adding a heavy battery to fly longer adds weight, which raises hover power, which demands yet more battery — a diminishing-returns spiral. A lightweight, energy-dense fuel source breaks the spiral, which is exactly why hybrid multirotors post 2–4× the endurance of pure-electric ones.</p>
+
+  <!-- 3 -->
+  <h2 class="anchor" id="energy">3 · Energy sources compared</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Criterion</th><th>Battery-electric</th><th>IC engine (direct)</th><th>Hybrid (fuel+electric)</th><th>Hydrogen fuel cell</th></tr></thead>
+      <tbody>
+        <tr><td>Endurance (multirotor)</td><td><span class="tag r">20–45 min</span></td><td>n/a (hover)</td><td><span class="tag g">2–4+ h</span></td><td><span class="tag o">1–3 h</span></td></tr>
+        <tr><td>Payload capacity</td><td>Low–med</td><td>High</td><td><span class="tag g">High</span></td><td>Med</td></tr>
+        <tr><td>Refuel / recharge time</td><td>Slow (or swap)</td><td><span class="tag g">Fast (pour fuel)</span></td><td><span class="tag g">Fast</span></td><td>Fast (if H₂ available)</td></tr>
+        <tr><td>Vibration / noise</td><td><span class="tag g">Very low</span></td><td>High</td><td>Medium</td><td><span class="tag g">Low</span></td></tr>
+        <tr><td>Control precision</td><td><span class="tag g">Excellent</span></td><td>Poor</td><td><span class="tag g">Excellent (motors fly)</span></td><td>Excellent</td></tr>
+        <tr><td>Maintenance</td><td><span class="tag g">Minimal</span></td><td>High (engine service)</td><td>High</td><td>Medium</td></tr>
+        <tr><td>Fuel availability (rural India)</td><td>Grid/charging</td><td><span class="tag g">Petrol everywhere</span></td><td><span class="tag g">Petrol everywhere</span></td><td><span class="tag r">Scarce</span></td></tr>
+        <tr><td>System complexity</td><td><span class="tag g">Low</span></td><td>Medium</td><td>High</td><td>High</td></tr>
+        <tr><td>Emissions / thermal signature</td><td><span class="tag g">Zero local</span></td><td>Exhaust + heat</td><td>Exhaust + heat</td><td>Water only</td></tr>
+        <tr><td>Cost per flight-hour</td><td>Low energy, high battery wear</td><td>Fuel cheap, service dear</td><td>Balanced</td><td>H₂ expensive today</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note warn"><strong>Honest reading:</strong> electric wins on simplicity, control, noise, and maintenance — that's why it dominates. Your bet only pays off in the missions where <em>endurance × payload</em> is the buyer's binding constraint. Pick those beachhead missions deliberately (see <a href="market.html#segments">Market</a>).</div>
+
+  <!-- 4 -->
+  <h2 class="anchor" id="hybrid">4 · Hybrid architectures in detail</h2>
+  <p class="lede">The most promising path is not a bare engine — it's a hybrid that keeps electric-grade control while a fuel powerplant supplies the energy.</p>
+
+  <div class="phase">
+    <div class="ph-label">Architecture A</div>
+    <h3>Series hybrid (engine → generator → battery → motors)</h3>
+    <p>The engine never touches a propeller. It runs at its most efficient RPM to spin a generator, feeding a DC bus with a small buffer battery. Electric motors do all the flying, so you keep multirotor agility and full-authority flight control. This is the dominant architecture in today's long-endurance hybrid multirotors (Harris Aerial Carrier H6, Skyfront Perimeter, YANGDA YD6, Foxtech, etc.).</p>
+    <p><strong>Design levers:</strong> engine BSFC map, generator efficiency, rectifier/DC-DC losses, buffer-battery sizing for peak transients (gusts, aggressive manoeuvres), thermal management.</p>
+  </div>
+
+  <div class="phase">
+    <div class="ph-label">Architecture B</div>
+    <h3>Direct-drive IC (engine → propeller)</h3>
+    <p>Classic on fuel-powered fixed-wing UAVs. Lightest and simplest for cruise, unbeatable for long-range mapping/ISR. Not viable for hover-precise multirotor work, so it pairs naturally with fixed-wing or the cruise phase of a VTOL.</p>
+  </div>
+
+  <div class="phase">
+    <div class="ph-label">Architecture C</div>
+    <h3>Parallel hybrid (engine + motor share the shaft)</h3>
+    <p>Motor provides burst power for VTOL takeoff; engine handles efficient cruise; both can drive the prop. Best power-to-weight for heavy-lift VTOL cargo, but mechanically the most complex — clutch, gearbox, and control-blending are hard engineering problems (and patent opportunities).</p>
+  </div>
+
+  <h4>Recommended starting point</h4>
+  <p>For a first product, a <strong>series-hybrid multirotor or hybrid-VTOL</strong> is the pragmatic beachhead: it delivers the endurance story buyers want, reuses mature electric flight control, and puts your differentiation exactly where your expertise is — the <strong>engine + generator “range-extender” module</strong>. That module can even become a standalone product you sell to other airframe makers.</p>
+
+  <!-- 5 -->
+  <h2 class="anchor" id="params">5 · Key design parameters &amp; formulae</h2>
+  <dl class="defs">
+    <dt>All-Up Weight (AUW / MTOW)</dt><dd>Total flying mass. Sets the DGCA category (Nano/Micro/Small/Medium/Large) and everything downstream.</dd>
+    <dt>Payload fraction</dt><dd>Payload ÷ AUW. Battery multirotors ~10–25%; fuel/hybrid systems push higher because energy mass is lower per flight-hour.</dd>
+    <dt>Disc loading</dt><dd>Thrust per rotor swept area (N/m²). Lower = more efficient hover, larger props. A core multirotor efficiency knob.</dd>
+    <dt>Power loading</dt><dd>Thrust per watt (g/W). Higher is better; drives motor/prop and engine sizing.</dd>
+    <dt>BSFC</dt><dd>Brake-Specific Fuel Consumption (g/kWh) — the engine efficiency metric you'll obsess over. Lower = more flight per litre.</dd>
+    <dt>Specific power</dt><dd>Powerplant output per kg (kW/kg). The engine's power-to-weight; decisive for lift.</dd>
+    <dt>Endurance</dt><dd>≈ usable energy ÷ average power draw. Fuel systems win by carrying far more usable energy per kg.</dd>
+    <dt>Cruise vs hover power</dt><dd>Fixed-wing cruise can be 3–5× cheaper than multirotor hover — the reason VTOL hybrids exist.</dd>
+    <dt>TSFC / thermal load</dt><dd>Engine waste heat must be managed; airflow, cylinder design, and cooling are integration constraints.</dd>
+  </dl>
+  <div class="note fire"><strong>Where your CFD / combustion / thermal background is a weapon:</strong> BSFC optimisation, scavenging and port design in small 2-strokes, EFI calibration, cooling-airflow CFD, vibration isolation, and prop–slipstream interaction are all deep, under-served problems in the &lt;10&nbsp;kW UAV-engine class. This is textbook first-principles engineering territory.</div>
+
+  <!-- 6 -->
+  <h2 class="anchor" id="sota">6 · State of the art — what already exists</h2>
+  <p>Engine-powered and hybrid UAVs are an established but still-niche category, dominated by a few Western specialists. This validates the concept and shows the performance bar.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>System</th><th>Type</th><th>Powertrain</th><th>Reported performance*</th></tr></thead>
+      <tbody>
+        <tr><td>Harris Aerial Carrier H6 Hybrid</td><td>Hexacopter</td><td>Series hybrid, ~2.4 kW EFI genset</td><td>Up to ~240 min; ~5 kg payload (≈5× the battery H6)</td></tr>
+        <tr><td>Skyfront Perimeter 8</td><td>Octocopter</td><td>Gasoline series hybrid</td><td>~5 kg for 2–3 h; up to ~10 kg for ~1 h</td></tr>
+        <tr><td>YANGDA YD6-1600L</td><td>Hexacopter</td><td>Fuel-electric hybrid</td><td>~2 h endurance; up to ~6.5 kg payload</td></tr>
+        <tr><td>Foxtech / Quaternium HYBRiX</td><td>Multirotor</td><td>Gasoline hybrid</td><td>Multi-hour endurance class</td></tr>
+        <tr><td>Fixed-wing ISR (e.g. heavy-fuel)</td><td>Fixed-wing</td><td>Direct-drive 2-stroke / HFE</td><td>Many hours; long-range mapping &amp; surveillance</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="disclaimer">*Manufacturer-reported figures gathered from public product pages — treat as directional, not verified benchmarks. Full engine reference table on the <a href="taxonomy.html#engines">Drones &amp; Engines</a> page.</p>
+  <div class="note"><strong>The gap:</strong> almost none of these are Indian, and few are price-optimised for Indian agriculture or built around locally serviceable engines and fuel. That's the opening — a cost-engineered, India-manufactured hybrid powertrain.</div>
+
+  <!-- 7 -->
+  <h2 class="anchor" id="hydrogen">7 · Where hydrogen fits (your adjacent expertise)</h2>
+  <p>Given a background in hydrogen-energy and safety, hydrogen fuel cells are a natural second horizon. Fuel cells give electric-grade quiet, clean operation with better specific energy than batteries — but today the tank and stack mass, cost, and near-total absence of rural H₂ refuelling make them a <strong>later-stage or defence/urban niche</strong> play, not a launch product. Keep it on the roadmap as a differentiation option once the combustion-hybrid business is running.</p>
+
+  <!-- 8 -->
+  <h2 class="anchor" id="gaps">8 · Research gaps &amp; your defensible angle</h2>
+  <ul class="check">
+    <li><strong>Efficient sub-10 kW UAV engines</strong> — most small 2-strokes are hobby-grade and inefficient; EFI + optimised combustion for continuous-duty flight is under-developed.</li>
+    <li><strong>Integrated range-extender module</strong> — a compact, vibration-isolated engine-generator-controller “brick” sold as a unit is a product in itself.</li>
+    <li><strong>Thermal &amp; vibration integration</strong> — cooling airflow, exhaust routing, and isolating engine vibration from sensitive avionics/cameras is hard and CFD-solvable.</li>
+    <li><strong>Multi-fuel / heavy-fuel small engines</strong> — single-fuel (diesel/Jet-A) capability is highly valued by defence and under-served at small scale.</li>
+    <li><strong>India cost-engineering &amp; serviceability</strong> — a powertrain built around locally available fuel, parts, and rural repair skills.</li>
+    <li><strong>Hybrid energy management</strong> — control logic that blends engine + buffer battery for gust transients and efficiency is patentable software-on-hardware.</li>
+  </ul>
+  <div class="note fire"><strong>Positioning:</strong> don't frame the company as “a drone maker” (crowded). Frame it as <strong>“the powertrain company for long-endurance drones”</strong> — you can sell finished drones <em>and</em> license/sell the propulsion module. That is the defensible, expertise-aligned position.</div>
+
+  <div class="cta-row" style="margin-top:34px">
+    <a class="btn btn-primary" href="taxonomy.html">Browse drone classes &amp; engine specs →</a>
+    <a class="btn btn-ghost" href="market.html">Market &amp; regulation</a>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="disclaimer">Technical figures are order-of-magnitude and manufacturer-reported values compiled for orientation. Validate every number against primary sources and your own bench testing before design or investment decisions. See <a href="resources.html">Resources &amp; Sources</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources, Glossary &amp; Sources — VAYUYAAN</title>
+<meta name="description" content="Sources, official links, standards, a glossary of drone and propulsion terms, and further-reading pointers for an IC-engine drone venture in India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="mark">🜂</span><span>VAYUYAAN<small>Engine-powered drones · भारत</small></span></a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="technology.html">Technology</a>
+      <a href="taxonomy.html">Drones &amp; Engines</a>
+      <a href="market.html">Market</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="resources.html" class="active">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">📎 Resources</span>
+    <h1>Resources, glossary &amp; sources</h1>
+    <p>Official links to keep bookmarked, the standards you'll touch, a plain-language glossary, and the public sources behind the figures on this site.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <h2 class="anchor" id="official">Official links (bookmark these)</h2>
+  <div class="grid cols-2">
+    <div class="card"><h4>Regulation &amp; certification</h4><ul class="check">
+      <li><strong>DGCA</strong> — Directorate General of Civil Aviation (drone rules, type certification)</li>
+      <li><strong>Digital Sky</strong> — MoCA platform for UIN, airspace map, permissions</li>
+      <li><strong>Drone Rules, 2021</strong> — the governing legislation (Ministry of Civil Aviation)</li>
+      <li><strong>QCI / accredited test labs</strong> — for type-certification testing</li>
+    </ul></div>
+    <div class="card"><h4>Schemes &amp; funding</h4><ul class="check">
+      <li><strong>Namo Drone Didi</strong> — Dept. of Agriculture &amp; Farmers' Welfare (PIB releases)</li>
+      <li><strong>Drone PLI</strong> — Ministry of Civil Aviation</li>
+      <li><strong>iDEX</strong> — Innovations for Defence Excellence</li>
+      <li><strong>Startup India / DPIIT</strong> — recognition &amp; benefits</li>
+      <li><strong>ANRF / SERB, DST, MNRE, TDB</strong> — research &amp; deep-tech grants</li>
+    </ul></div>
+  </div>
+  <div class="note warn">Government portals and rules change. Always read the current version on the official site before acting; where this site names a figure or rule, treat it as a pointer to verify, not a citation to rely on.</div>
+
+  <h2 class="anchor" id="glossary">Glossary</h2>
+  <dl class="defs">
+    <dt>AUW / MTOW</dt><dd>All-Up Weight / Maximum Take-Off Weight — total flying mass; sets DGCA category.</dd>
+    <dt>MAUW</dt><dd>Maximum All-Up Weight — the term the Drone Rules use for categorisation.</dd>
+    <dt>BVLOS</dt><dd>Beyond Visual Line of Sight — long-range ops needing special permission.</dd>
+    <dt>BSFC</dt><dd>Brake-Specific Fuel Consumption (g/kWh) — engine efficiency; lower is better.</dd>
+    <dt>Series hybrid</dt><dd>Engine spins a generator that powers electric motors; engine never drives the prop.</dd>
+    <dt>Parallel hybrid</dt><dd>Engine and motor can both drive the propeller/shaft.</dd>
+    <dt>Range extender</dt><dd>The engine-generator module that recharges/feeds the battery bus in flight.</dd>
+    <dt>HFE</dt><dd>Heavy-Fuel Engine — runs diesel/Jet-A; single-fuel logistics, valued by defence.</dd>
+    <dt>EFI</dt><dd>Electronic Fuel Injection — improves efficiency &amp; reliability vs carburettor.</dd>
+    <dt>Disc loading</dt><dd>Rotor thrust per swept area; lower = more efficient hover.</dd>
+    <dt>Specific energy</dt><dd>Energy stored per kg (Wh/kg) — where fuel beats batteries ~10–20×.</dd>
+    <dt>VTOL</dt><dd>Vertical Take-Off and Landing.</dd>
+    <dt>ISR</dt><dd>Intelligence, Surveillance &amp; Reconnaissance (defence use case).</dd>
+    <dt>DaaS</dt><dd>Drone-as-a-Service — selling flight-hours/outcomes, not hardware.</dd>
+    <dt>Type Certificate (TC)</dt><dd>DGCA approval that a drone model meets design/safety/airworthiness standards.</dd>
+    <dt>UIN</dt><dd>Unique Identification Number — every Indian drone must carry one.</dd>
+    <dt>RPTO</dt><dd>Remote Pilot Training Organisation — DGCA-approved pilot certification.</dd>
+    <dt>SHG</dt><dd>Self-Help Group — the beneficiary unit under Namo Drone Didi.</dd>
+    <dt>FPO</dt><dd>Farmer Producer Organisation — potential agri-drone buyer/channel.</dd>
+  </dl>
+
+  <h2 class="anchor" id="reading">Further reading &amp; benchmarks</h2>
+  <ul class="check">
+    <li><strong>Hybrid UAV product pages</strong> — Harris Aerial (Carrier H6), Skyfront (Perimeter 8), YANGDA, Quaternium HYBRiX — study their published endurance/payload numbers as your performance bar.</li>
+    <li><strong>UAV engine makers</strong> — Desert Aircraft / INF Inject (DA-50 EFI), 3W, HFE International — for engine specs &amp; procurement.</li>
+    <li><strong>Flight-control stacks</strong> — PX4, ArduPilot documentation — for the avionics you'll integrate.</li>
+    <li><strong>Academic literature</strong> — search "hybrid electric propulsion multirotor", "heavy fuel engine UAV", "series hybrid endurance UAV feasibility" (e.g. JSDEWES feasibility studies) for design methodology.</li>
+    <li><strong>Market reports</strong> — MarketsandMarkets, IMARC, Ken Research India drone reports (paid); triangulate their headline numbers.</li>
+  </ul>
+
+  <h2 class="anchor" id="sources">Sources behind the figures on this site</h2>
+  <p class="sources">Figures used on the Home, Technology and Market pages were compiled in August 2026 from the following public sources. They are indicative and should be independently verified.</p>
+  <ol class="sources">
+    <li>MarketsandMarkets — India Drone (UAV) Market Size &amp; Forecast 2025–2030 — <a href="https://www.marketsandmarkets.com/Market-Reports/india-drone-market-136782206.html">marketsandmarkets.com</a></li>
+    <li>IMARC Group — India Drones Market — <a href="https://www.imarcgroup.com/india-drones-market">imarcgroup.com</a></li>
+    <li>PIB / Dept. of Agriculture &amp; Farmers' Welfare — Namo Drone Didi scheme releases — <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2070029">pib.gov.in</a></li>
+    <li>Namo Drone Didi Scheme overview — <a href="https://en.wikipedia.org/wiki/Namo_Drone_Didi_Scheme">en.wikipedia.org</a></li>
+    <li>ThinkRobotics — Guide to DGCA Type Certification in India (2025) — <a href="https://thinkrobotics.com/blogs/learn/complete-guide-to-drone-dgca-type-certification-process-in-india-2025">thinkrobotics.com</a></li>
+    <li>Harris Aerial — Carrier H6 Hybrid — <a href="https://harrisaerial.com/carrier-drones/carrier-h6-hybrid/">harrisaerial.com</a></li>
+    <li>Skyfront — Perimeter 8 long-endurance drone — <a href="https://skyfront.com/perimeter-8">skyfront.com</a></li>
+    <li>YANGDA — YD6-1600L fuel-electric hybrid — <a href="https://www.yangdaonline.com/yangda-yd6-1600l-gas-electric-hybrid-hexacopter/">yangdaonline.com</a></li>
+    <li>Unmanned Systems Technology — Hybrid drones &amp; propulsion — <a href="https://www.unmannedsystemstechnology.com/expo/hybrid-drones/">unmannedsystemstechnology.com</a></li>
+    <li>INF Inject / Desert Aircraft — DA-50 EFI UAV engine — <a href="https://www.unmannedsystemstechnology.com/company/inf-inject/da50/">unmannedsystemstechnology.com</a></li>
+    <li>Built In — Drone companies in India — <a href="https://builtin.com/articles/drone-companies-in-india">builtin.com</a></li>
+    <li>JSDEWES — Hybrid IC-electric multirotor feasibility study — <a href="https://www.sdewes.org/jsdewes/pid12.0505">sdewes.org</a></li>
+  </ol>
+
+  <div class="note fire"><strong>Keep this list alive.</strong> As you research, add primary sources (DGCA circulars, scheme guidelines, supplier datasheets, your own bench data) and replace the indicative third-party numbers with verified ones. This page is the single place to track what's confirmed vs assumed.</div>
+
+  <div class="cta-row" style="margin-top:30px">
+    <a class="btn btn-primary" href="index.html">← Back to home</a>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="disclaimer">External links are provided for convenience; their content is owned by third parties and may change. Nothing here is legal, financial, or regulatory advice. Verify all figures, rules, and specifications with primary/official sources before relying on them.</p>
+  </div>
+</footer>
+
+</body>
+</html>
