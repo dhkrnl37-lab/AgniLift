@@ -63,8 +63,8 @@
       <div class="prose">
         <h2 style="margin-top:0">Start a conversation</h2>
         <p>We are an early-stage research and development initiative and read every genuine enquiry.</p>
-        <p class="mono-label">Email</p>
-        <p><a href="mailto:hello@agnilift.example">hello@agnilift.example</a> <span class="pill">placeholder</span></p>
+        <p class="mono-label">Enquiries</p>
+        <p>Send us a message with the form — it reaches our inbox directly, and we reply by email.</p>
         <p class="mono-label">Location</p>
         <p>India</p>
         <div class="note flag"><strong>Please do not submit classified, export-controlled, operationally sensitive or confidential information through this form.</strong></div>
@@ -72,6 +72,10 @@
 
       <div class="form-card">
         <form id="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="d46faf3d-528c-4947-8314-7e7f089c586a">
+          <input type="hidden" name="subject" value="New AgniLift website enquiry">
+          <input type="hidden" name="from_name" value="AgniLift Website">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
           <div class="form-row">
             <div class="field">
               <label for="cf-name">Full name <span class="req" aria-hidden="true">*</span></label>

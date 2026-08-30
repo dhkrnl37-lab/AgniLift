@@ -366,6 +366,8 @@ td strong { color: var(--text); }
 .form-status { margin-top: 16px; padding: 14px 16px; border-radius: 10px; font-size: .92rem; display: none; }
 .form-status.show { display: block; }
 .form-status.info { background: rgba(47,128,237,.1); border: 1px solid rgba(47,128,237,.35); color: var(--text); }
+.form-status.success { background: rgba(34,160,90,.10); border: 1px solid rgba(34,160,90,.40); color: #1c7a48; }
+.form-status.error { background: rgba(214,60,60,.09); border: 1px solid rgba(214,60,60,.40); color: #b02a2a; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--bg-section); border-top: 1px solid var(--border); padding: clamp(44px, 6vw, 68px) 0 32px; margin-top: 0; }

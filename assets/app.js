@@ -58,22 +58,46 @@
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---------- Contact form (development-state handling) ---------- */
+  /* ---------- Contact form (Web3Forms submission) ---------- */
   var form = document.getElementById("contact-form");
   if (form) {
     var status = document.getElementById("form-status");
+    var setStatus = function (kind, html) {
+      if (!status) return;
+      status.className = "form-status show " + kind;
+      status.setAttribute("role", kind === "error" ? "alert" : "status");
+      status.innerHTML = html;
+    };
     form.addEventListener("submit", function (e) {
-      e.preventDefault(); // No backend connected yet — do not pretend to send.
+      e.preventDefault();
       if (!form.reportValidity()) return;
-      if (status) {
-        status.className = "form-status info show";
-        status.setAttribute("role", "status");
-        status.innerHTML =
-          "This enquiry form is not yet connected to a backend. " +
-          "Please email us directly at <a href=\"mailto:hello@agnilift.example\">hello@agnilift.example</a> " +
-          "while submission is being configured for launch.";
-        status.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "nearest" });
-      }
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      setStatus("info", "Sending your enquiry…");
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, data: j }; }); })
+        .then(function (res) {
+          if (res.ok && res.data && res.data.success) {
+            form.reset();
+            setStatus("success", "Thank you — your enquiry has been sent. We'll get back to you by email.");
+          } else {
+            var msg = (res.data && res.data.message) ? res.data.message : "Something went wrong.";
+            setStatus("error", "Sorry, we couldn't send your enquiry (" + msg + "). Please try again in a moment.");
+          }
+        })
+        .catch(function () {
+          setStatus("error", "Network error — please check your connection and try again.");
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          if (status) status.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "nearest" });
+        });
     });
   }
 
