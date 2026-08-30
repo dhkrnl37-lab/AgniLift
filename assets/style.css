@@ -342,10 +342,25 @@ td strong { color: var(--text); }
 .pill.blue { color: var(--blue-soft); border-color: rgba(47,128,237,.4); background: rgba(47,128,237,.08); }
 .pill.flame { color: var(--amber); border-color: rgba(242,100,25,.4); background: rgba(242,100,25,.08); }
 
-/* ---------- Page hero (interior) ---------- */
-.page-hero { padding: clamp(50px, 8vw, 92px) 0 clamp(28px, 4vw, 44px); position: relative; }
-.page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 18ch; }
-.page-hero p { font-size: 1.1rem; max-width: 62ch; }
+/* ---------- Page hero (interior) — polished header band ---------- */
+.page-hero {
+  padding: clamp(56px, 8vw, 104px) 0 clamp(36px, 5vw, 56px);
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #E4EAF3 0%, var(--bg) 90%);
+  border-bottom: 1px solid var(--border);
+}
+.page-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(640px 320px at 92% -25%, rgba(47,128,237,.16), transparent 62%),
+    radial-gradient(440px 260px at 6% 130%, rgba(242,100,25,.07), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(11,29,42,.03) 0 1px, transparent 1px 46px);
+  -webkit-mask-image: radial-gradient(120% 130% at 88% 0%, #000 20%, transparent 78%);
+          mask-image: radial-gradient(120% 130% at 88% 0%, #000 20%, transparent 78%);
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); max-width: 20ch; }
+.page-hero p { font-size: 1.12rem; max-width: 64ch; }
 
 /* ---------- Forms ---------- */
 .form-card { background: linear-gradient(180deg, var(--card), var(--card-2)); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(22px, 4vw, 36px); box-shadow: var(--shadow); }
