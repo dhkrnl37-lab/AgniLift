@@ -24,7 +24,7 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* Scale */
-  --maxw: 1200px;
+  --maxw: 1280px;
   --radius: 16px;
   --radius-sm: 10px;
   --gap: clamp(16px, 2.5vw, 26px);
@@ -385,6 +385,18 @@ td strong { color: var(--text); }
 .footer-copy { font-family: var(--font-mono); font-size: .74rem; color: #6f8091; margin-top: 16px; }
 
 hr.rule { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+/* Full-width CTA band (breaks out of the centered container) */
+.cta-inner {
+  width: 100vw; margin-left: calc(50% - 50vw);
+  padding: clamp(44px, 6vw, 74px) var(--pad-x);
+  background: radial-gradient(140% 180% at 50% 0%, rgba(47,128,237,.08), transparent 60%), var(--bg-section);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.cta-inner > * { max-width: 720px; margin-left: auto; margin-right: auto; }
+.cta-inner > h2 { margin-top: 0; }
+.cta-inner .eyebrow { justify-content: center; display: inline-flex; }
 
 /* Application detail cards */
 .app-card { display: grid; grid-template-columns: 200px 1fr; gap: clamp(18px, 3vw, 36px); align-items: start; }
