@@ -5,18 +5,18 @@
 
 :root {
   /* Colour system */
-  --bg:            #EAEEF3;   /* light page */
-  --bg-section:    #F4F7FA;   /* lighter alternating section */
+  --bg:            #E7EEF7;   /* soft blue-tinted page */
+  --bg-section:    #F1F6FC;   /* lighter alternating section */
   --card:          #FFFFFF;   /* elevated card */
-  --card-2:        #F6F8FC;
-  --flame:         #F26419;   /* primary flame orange (controlled highlight) */
-  --amber:         #C2410C;   /* burnt-orange accent, readable on white */
-  --blue:          #2F80ED;   /* aerospace blue */
-  --blue-soft:     #2563EB;   /* deeper blue for icons/text on white */
-  --text:          #0B1D2A;   /* ink text */
-  --text-dim:      #52616E;   /* secondary text */
-  --border:        rgba(11,29,42,0.12);
-  --border-2:      rgba(11,29,42,0.20);
+  --card-2:        #F3F7FC;
+  --flame:         #2563EB;   /* primary blue (buttons, highlights) */
+  --amber:         #0369A1;   /* deep sky accent, readable on white */
+  --blue:          #2563EB;   /* aerospace blue */
+  --blue-soft:     #0EA5E9;   /* sky / cyan for icons */
+  --text:          #0F213A;   /* deep navy ink text */
+  --text-dim:      #4A5A6E;   /* secondary text */
+  --border:        rgba(15,33,58,0.12);
+  --border-2:      rgba(15,33,58,0.20);
 
   /* Type */
   --font-head: "Sora", "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -55,8 +55,8 @@ body::before {
   content: "";
   position: fixed; inset: 0; z-index: -2;
   background:
-    radial-gradient(900px 520px at 82% -6%, rgba(242,100,25,.07), transparent 60%),
-    radial-gradient(820px 560px at 2% 8%, rgba(47,128,237,.06), transparent 58%),
+    radial-gradient(900px 520px at 82% -6%, rgba(14,165,233,.08), transparent 60%),
+    radial-gradient(820px 560px at 2% 8%, rgba(37,99,235,.07), transparent 58%),
     var(--bg);
 }
 body::after {
@@ -113,7 +113,7 @@ strong { color: var(--text); font-weight: 600; }
   cursor: pointer; min-height: 44px; transition: transform .16s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .btn:hover { text-decoration: none; }
-.btn-primary { background: linear-gradient(120deg, var(--flame), #ff8a3d); color: #180a03; box-shadow: 0 12px 26px -12px rgba(242,100,25,.7); }
+.btn-primary { background: linear-gradient(120deg, var(--flame), #4f9cf5); color: #ffffff; box-shadow: 0 12px 26px -12px rgba(37,99,235,.55); }
 .btn-primary:hover { transform: translateY(-2px); }
 .btn-ghost { background: rgba(11,29,42,.03); color: var(--text); border-color: var(--border-2); }
 .btn-ghost:hover { border-color: var(--blue); background: rgba(47,128,237,.10); transform: translateY(-2px); }
@@ -262,7 +262,7 @@ strong { color: var(--text); font-weight: 600; }
   background: rgba(47,128,237,.12); border: 1px solid rgba(47,128,237,.25); margin-bottom: 16px;
 }
 .card .card-icon svg { width: 24px; height: 24px; color: var(--blue-soft); }
-.card.flame .card-icon { background: rgba(242,100,25,.12); border-color: rgba(242,100,25,.3); }
+.card.flame .card-icon { background: rgba(14,165,233,.12); border-color: rgba(14,165,233,.32); }
 .card.flame .card-icon svg { color: var(--amber); }
 .card h3 { font-size: 1.18rem; margin-bottom: 8px; }
 .card p { font-size: .96rem; margin: 0; }
@@ -276,8 +276,8 @@ strong { color: var(--text); font-weight: 600; }
   border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; position: relative;
   box-shadow: 0 1px 2px rgba(11,29,42,.05), 0 12px 28px -18px rgba(20,40,70,.22);
 }
-.step.primary { border-color: rgba(242,100,25,.4); box-shadow: 0 0 0 1px rgba(242,100,25,.15), var(--shadow-soft); }
-.step-badge { position: absolute; top: 18px; right: 18px; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: #180a03; background: var(--amber); padding: 4px 9px; border-radius: 999px; }
+.step.primary { border-color: rgba(37,99,235,.45); box-shadow: 0 0 0 1px rgba(37,99,235,.15), var(--shadow-soft); }
+.step-badge { position: absolute; top: 18px; right: 18px; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--flame); padding: 4px 9px; border-radius: 999px; }
 .step-num { font-family: var(--font-mono); color: var(--blue-soft); font-size: .8rem; letter-spacing: .1em; }
 .step h3 { margin: 8px 0 10px; font-size: 1.15rem; }
 .step .diagram { margin: 14px 0 16px; }
@@ -340,21 +340,21 @@ tbody tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 .pill { display: inline-block; font-family: var(--font-mono); font-size: .68rem; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border-2); color: var(--text-dim); }
 .pill.blue { color: var(--blue-soft); border-color: rgba(47,128,237,.4); background: rgba(47,128,237,.08); }
-.pill.flame { color: var(--amber); border-color: rgba(242,100,25,.4); background: rgba(242,100,25,.08); }
+.pill.flame { color: var(--amber); border-color: rgba(37,99,235,.4); background: rgba(37,99,235,.08); }
 
 /* ---------- Page hero (interior) — polished header band ---------- */
 .page-hero {
   padding: clamp(56px, 8vw, 104px) 0 clamp(36px, 5vw, 56px);
   position: relative; overflow: hidden;
-  background: linear-gradient(180deg, #E4EAF3 0%, var(--bg) 90%);
+  background: linear-gradient(180deg, #DBE5F4 0%, var(--bg) 90%);
   border-bottom: 1px solid var(--border);
 }
 .page-hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(640px 320px at 92% -25%, rgba(47,128,237,.16), transparent 62%),
-    radial-gradient(440px 260px at 6% 130%, rgba(242,100,25,.07), transparent 60%),
-    repeating-linear-gradient(90deg, rgba(11,29,42,.03) 0 1px, transparent 1px 46px);
+    radial-gradient(640px 320px at 92% -25%, rgba(37,99,235,.18), transparent 62%),
+    radial-gradient(440px 260px at 6% 130%, rgba(14,165,233,.10), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(15,33,58,.03) 0 1px, transparent 1px 46px);
   -webkit-mask-image: radial-gradient(120% 130% at 88% 0%, #000 20%, transparent 78%);
           mask-image: radial-gradient(120% 130% at 88% 0%, #000 20%, transparent 78%);
 }
