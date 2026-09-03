@@ -331,7 +331,8 @@ tbody tr:hover th,tbody tr:hover td{background:rgba(255,255,255,.02);}
 /* ---------- page hero (interior) ---------- */
 .phero{position:relative;padding:clamp(140px,15vw,180px) 0 clamp(44px,6vw,68px);overflow:hidden;border-bottom:1px solid var(--line);}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(760px 380px at 78% -20%,rgba(62,139,255,.20),transparent 62%);}
-.phero h1{font-size:clamp(2.2rem,5vw,3.7rem);font-weight:800;letter-spacing:-.04em;max-width:19ch;}
+.phero h1{font-size:clamp(2.1rem,5.6vw,5.6rem);font-weight:800;letter-spacing:-.042em;line-height:1.0;max-width:22ch;text-wrap:balance;}
+@media(min-width:1100px){.phero h1{max-width:none;text-wrap:initial;}}
 .phero .lead{margin-top:22px;max-width:64ch;}
 
 /* ---------- application list ---------- */
