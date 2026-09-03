@@ -4,229 +4,208 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research | AgniLift UAV Technologies</title>
-<meta name="description" content="AgniLift's research approach: methodology, a qualitative comparison of battery, direct-drive IC and hybrid propulsion, known technical unknowns, planned testing, and technical references.">
-<meta name="theme-color" content="#E7EEF7">
+<meta name="description" content="AgniLift's research approach: methodology, a qualitative comparison of battery, direct-drive IC and hybrid propulsion, technical unknowns, planned testing and references.">
+<meta name="theme-color" content="#0A1018">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Research | AgniLift UAV Technologies">
-<meta property="og:description" content="Research before claims — methodology, propulsion literature overview, technical unknowns, planned testing and references.">
+<meta property="og:description" content="AgniLift's research approach: methodology, a qualitative comparison of battery, direct-drive IC and hybrid propulsion, technical unknowns, planned testing and references.">
 <meta property="og:site_name" content="AgniLift UAV Technologies">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-      <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-        <defs><linearGradient id="agl1" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-        <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl1)"/>
-        <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-      </svg>
-      <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+      <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0A1018" opacity=".72"/></svg>
+      <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="research.html" class="active" aria-current="page">Research</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta-item"><a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a></li>
-      </ul>
+    <nav class="links" id="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="technology.html">Technology</a>
+      <a href="applications.html">Applications</a>
+      <a href="research.html" class="on" aria-current="page">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <span class="navcta"><a class="btn btn-p" href="contact.html">Discuss a Collaboration</a></span>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
-<div class="nav-backdrop"></div>
+<div class="scrim" id="scrim"></div>
 
 <main id="main">
-
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Research</p>
-      <h1>Research Before Claims</h1>
-      <p>We would rather publish honest research questions than unproven performance figures. This page outlines how we work, what we are studying, and what remains uncertain.</p>
+  <section class="phero">
+    <div class="wrap">
+      <span class="eyebrow">Research</span>
+      <h1>Research before claims</h1>
+      <p class="lead">We would rather publish honest research questions than unproven performance figures. This page outlines how we work, what we are studying, and what remains uncertain.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container split">
-      <div class="prose">
-        <p class="eyebrow">Mission</p>
-        <h2>Our research mission</h2>
-        <p>To investigate whether compact engine and hybrid power systems can dependably extend the endurance and payload capability of small and medium UAVs — and to do so with engineering rigour, safety and honest reporting.</p>
+  <section class="sect">
+    <div class="wrap show">
+      <div class="show-copy rv">
+        <span class="eyebrow"><span class="num">01</span> — Mission</span>
+        <h2 class="h-lg">Our research mission</h2>
+        <p class="lead">To investigate whether compact engine and hybrid power systems can dependably extend the endurance and payload capability of small and medium UAVs — and to do so with engineering rigour, safety and honest reporting.</p>
       </div>
-      <div class="prose">
-        <p class="eyebrow">Methodology</p>
-        <h2>How we work</h2>
-        <ul>
-          <li>Define the mission and its real constraints first.</li>
-          <li>Compare propulsion options on the basis of physics and evidence.</li>
-          <li>Test components on the bench before trusting them in the air.</li>
-          <li>Progress through controlled flight testing with data at each step.</li>
-          <li>Separate what is demonstrated from what is still a hypothesis.</li>
-        </ul>
+      <div class="show-media">
+        <div class="panel">
+          <div class="panel-cap">How we work</div>
+          <div class="rows" style="border-top:0">
+            <div class="row" style="grid-template-columns:44px 1fr;padding:16px 0"><div class="n">01</div><p style="margin:0">Define the mission and its real constraints first.</p></div>
+            <div class="row" style="grid-template-columns:44px 1fr;padding:16px 0"><div class="n">02</div><p style="margin:0">Compare propulsion options on the basis of physics and evidence.</p></div>
+            <div class="row" style="grid-template-columns:44px 1fr;padding:16px 0"><div class="n">03</div><p style="margin:0">Test components on the bench before trusting them in the air.</p></div>
+            <div class="row" style="grid-template-columns:44px 1fr;padding:16px 0"><div class="n">04</div><p style="margin:0">Progress through controlled flight testing with data at each step.</p></div>
+            <div class="row" style="grid-template-columns:44px 1fr;padding:16px 0;border-bottom:0"><div class="n">05</div><p style="margin:0">Separate what is demonstrated from what is still a hypothesis.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Literature Overview</p>
-        <h2>Propulsion approaches — a qualitative comparison</h2>
-        <p>Engine-powered and hybrid UAVs are an established but specialised field internationally. The comparison below is qualitative and directional; it avoids specific performance figures, which depend heavily on design and must be established through testing.</p>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow"><span class="num">02</span> — Literature overview</span>
+        <h2 class="h-lg">Propulsion approaches — a qualitative comparison</h2>
+        <p class="lead">Engine-powered and hybrid UAVs are an established but specialised field internationally. The comparison below is qualitative and directional; it avoids specific performance figures, which depend heavily on design and must be established through testing.</p>
       </div>
-      <div class="table-wrap">
+      <div class="tw rv">
         <table>
-          <caption class="mono-label" style="text-align:left; padding:10px 16px; color:var(--text-dim)">Qualitative comparison — not measured results</caption>
+          <caption>Qualitative comparison — not measured results</caption>
           <thead>
             <tr><th scope="col">Consideration</th><th scope="col">Battery-electric</th><th scope="col">Direct-drive IC</th><th scope="col">Series hybrid</th></tr>
           </thead>
           <tbody>
             <tr><th scope="row">Typical endurance</th><td>Shorter</td><td>Longer (fixed-wing)</td><td>Longer</td></tr>
-            <tr><th scope="row">Hover control precision</th><td><span class="pill blue">Excellent</span></td><td>Not suited to hover</td><td><span class="pill blue">Retains electric control</span></td></tr>
+            <tr><th scope="row">Hover control precision</th><td><span class="chip b">Excellent</span></td><td>Not suited to hover</td><td><span class="chip b">Retains electric control</span></td></tr>
             <tr><th scope="row">Payload headroom</th><td>Lower for long flights</td><td>Higher</td><td>Higher</td></tr>
-            <tr><th scope="row">Mechanical simplicity</th><td><span class="pill blue">Simplest</span></td><td>Simple</td><td>More complex</td></tr>
-            <tr><th scope="row">Noise &amp; vibration</th><td><span class="pill blue">Very low</span></td><td>Higher</td><td>Moderate</td></tr>
+            <tr><th scope="row">Mechanical simplicity</th><td><span class="chip b">Simplest</span></td><td>Simple</td><td>More complex</td></tr>
+            <tr><th scope="row">Noise &amp; vibration</th><td><span class="chip b">Very low</span></td><td>Higher</td><td>Moderate</td></tr>
             <tr><th scope="row">Refuel / recharge</th><td>Recharge or swap</td><td>Refuel quickly</td><td>Refuel quickly</td></tr>
             <tr><th scope="row">Best-fit missions</th><td>Short-duration tasks</td><td>Long-range fixed-wing</td><td>Endurance multirotor &amp; VTOL</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Each approach has genuine strengths. Battery-electric UAVs are well suited to many missions; our research focuses on the subset where endurance and payload are the binding constraints.</p>
+      <div class="note rv">Each approach has genuine strengths. Battery-electric UAVs are well suited to many missions; our research focuses on the subset where endurance and payload are the binding constraints.</div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
-      <div class="prose">
-        <p class="eyebrow">Open Problems</p>
-        <h2>Technical unknowns we acknowledge</h2>
-        <ul>
-          <li>Sustained efficiency and reliability of compact engines under continuous flight loads.</li>
-          <li>Energy-management strategies across engine, generator and buffer battery.</li>
-          <li>Vibration isolation that protects sensitive payloads and avionics.</li>
-          <li>Thermal management for continuous-duty operation.</li>
-          <li>Fuel-system safety and field-handling simplicity.</li>
-          <li>Whole-system reliability and maintenance over time.</li>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap grid g2" style="gap:clamp(30px,5vw,70px)">
+      <div class="rv">
+        <span class="eyebrow"><span class="num">03</span> — Open problems</span>
+        <h2 class="h-md">Technical unknowns we acknowledge</h2>
+        <ul class="checks" style="grid-template-columns:1fr">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Sustained efficiency and reliability of compact engines under continuous flight loads.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Energy-management strategies across engine, generator and buffer battery.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Vibration isolation that protects sensitive payloads and avionics.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Thermal management for continuous-duty operation.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Fuel-system safety and field-handling simplicity.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 8v5M12 16h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Whole-system reliability and maintenance over time.</li>
         </ul>
       </div>
-      <div class="prose">
-        <p class="eyebrow">Planned Testing</p>
-        <h2>How we intend to test</h2>
-        <ul>
-          <li><span class="mono-label">Bench</span> — engine and generator characterisation, propeller matching, vibration and thermal measurement.</li>
-          <li><span class="mono-label">Integration</span> — power management and flight-control behaviour on the ground.</li>
-          <li><span class="mono-label">Tethered</span> — first powered checks in a controlled setup.</li>
-          <li><span class="mono-label">Flight</span> — progressive test flights with data collection and refinement.</li>
-          <li><span class="mono-label">Pilots</span> — controlled trials with research and industry collaborators.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Development Roadmap</p>
-        <h2>Staged development</h2>
-        <p>Each stage is an intended direction of work. We do not present later stages as complete.</p>
-      </div>
-      <div class="timeline">
-        <div class="tl-node"><div class="tl-dot"></div><p class="tl-step">01 — Feasibility</p><h3>Define &amp; compare</h3><p>Mission definition, propulsion comparison, aircraft sizing and safety analysis.</p></div>
-        <div class="tl-node"><div class="tl-dot"></div><p class="tl-step">02 — Powerplant testing</p><h3>Bench evaluation</h3><p>Engine selection, propeller matching, vibration analysis and thermal evaluation.</p></div>
-        <div class="tl-node"><div class="tl-dot"></div><p class="tl-step">03 — Integrated prototype</p><h3>System build</h3><p>Airframe, propulsion, avionics, controls and payload-interface development.</p></div>
-        <div class="tl-node"><div class="tl-dot"></div><p class="tl-step">04 — Controlled flight testing</p><h3>Fly &amp; refine</h3><p>Progressive test flights, data collection, refinement and reliability assessment.</p></div>
-        <div class="tl-node"><div class="tl-dot"></div><p class="tl-step">05 — Application pilots</p><h3>Field trials</h3><p>Controlled trials with research, agricultural and industrial collaborators.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">References</p>
-        <h2>Sources &amp; further reading</h2>
-        <p>Public technical references that inform our study of engine-powered and hybrid UAVs. External links are owned by third parties and provided for reference only.</p>
-      </div>
-      <div class="grid grid-2">
-        <div class="prose">
-          <h3 style="margin-top:0">Hybrid &amp; engine-powered UAV systems</h3>
-          <ul>
-            <li><a href="https://www.unmannedsystemstechnology.com/expo/hybrid-drones/" rel="noopener noreferrer">Unmanned Systems Technology — Hybrid drones &amp; propulsion overview</a></li>
-            <li><a href="https://harrisaerial.com/carrier-drones/carrier-h6-hybrid/" rel="noopener noreferrer">Harris Aerial — Carrier H6 Hybrid (product reference)</a></li>
-            <li><a href="https://skyfront.com/perimeter-8" rel="noopener noreferrer">Skyfront — Perimeter 8 long-endurance drone (product reference)</a></li>
-            <li><a href="https://www.yangdaonline.com/yangda-yd6-1600l-gas-electric-hybrid-hexacopter/" rel="noopener noreferrer">YANGDA — YD6 fuel-electric hybrid (product reference)</a></li>
-          </ul>
-        </div>
-        <div class="prose">
-          <h3 style="margin-top:0">Compact engines &amp; flight control</h3>
-          <ul>
-            <li><a href="https://www.unmannedsystemstechnology.com/company/inf-inject/da50/" rel="noopener noreferrer">INF Inject / Desert Aircraft — DA-50 EFI UAV engine (spec reference)</a></li>
-            <li><a href="https://www.sdewes.org/jsdewes/pid12.0505" rel="noopener noreferrer">JSDEWES — Hybrid IC-electric multirotor feasibility study</a></li>
-            <li><a href="https://docs.px4.io/" rel="noopener noreferrer">PX4 Autopilot — flight-control documentation</a></li>
-            <li><a href="https://ardupilot.org/ardupilot/" rel="noopener noreferrer">ArduPilot — open-source autopilot documentation</a></li>
-          </ul>
+      <div class="rv">
+        <span class="eyebrow"><span class="num">04</span> — Planned testing</span>
+        <h2 class="h-md">How we intend to test</h2>
+        <div class="rows" style="margin-top:20px">
+          <div class="row" style="grid-template-columns:110px 1fr"><div class="n">Bench</div><p style="margin:0">Engine and generator characterisation, propeller matching, vibration and thermal measurement.</p></div>
+          <div class="row" style="grid-template-columns:110px 1fr"><div class="n">Integration</div><p style="margin:0">Power management and flight-control behaviour on the ground.</p></div>
+          <div class="row" style="grid-template-columns:110px 1fr"><div class="n">Tethered</div><p style="margin:0">First powered checks in a controlled setup.</p></div>
+          <div class="row" style="grid-template-columns:110px 1fr"><div class="n">Flight</div><p style="margin:0">Progressive test flights with data collection and refinement.</p></div>
+          <div class="row" style="grid-template-columns:110px 1fr"><div class="n">Pilots</div><p style="margin:0">Controlled trials with research and industry collaborators.</p></div>
         </div>
       </div>
-      <div class="note flag" style="margin-top:26px"><strong>Research-status note.</strong> Nothing on this page should be read as a validated AgniLift result. Figures reported by third parties describe their own systems, not ours. Our own specifications will be published only after appropriate testing and validation.</div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Collaborate on the research</h2>
-        <p style="margin:0 auto 24px; max-width:60ch">We welcome research institutions, propulsion specialists and engineering partners interested in these questions.</p>
-        <a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow"><span class="num">05</span> — Development roadmap</span>
+        <h2 class="h-lg">Staged development</h2>
+        <p class="lead">Each stage is an intended direction of work. We do not present later stages as complete.</p>
+      </div>
+      <div class="tl rv">
+        <div class="st"><div class="bead"></div><div class="k">01 — Feasibility</div><h4>Define &amp; compare</h4><p>Mission definition, propulsion comparison, aircraft sizing and safety analysis.</p></div>
+        <div class="st"><div class="bead"></div><div class="k">02 — Powerplant</div><h4>Bench evaluation</h4><p>Engine selection, propeller matching, vibration analysis and thermal evaluation.</p></div>
+        <div class="st"><div class="bead"></div><div class="k">03 — Prototype</div><h4>System build</h4><p>Airframe, propulsion, avionics, controls and payload-interface development.</p></div>
+        <div class="st"><div class="bead"></div><div class="k">04 — Flight test</div><h4>Fly &amp; refine</h4><p>Progressive test flights, data collection, refinement and reliability assessment.</p></div>
+        <div class="st"><div class="bead"></div><div class="k">05 — Pilots</div><h4>Field trials</h4><p>Controlled trials with research, agricultural and industrial collaborators.</p></div>
       </div>
     </div>
   </section>
 
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow"><span class="num">06</span> — References</span>
+        <h2 class="h-lg">Sources &amp; further reading</h2>
+        <p class="lead">Public technical references that inform our study of engine-powered and hybrid UAVs. External links are owned by third parties and provided for reference only.</p>
+      </div>
+      <div class="grid g2 rv">
+        <div class="card">
+          <h3>Hybrid &amp; engine-powered UAV systems</h3>
+          <ul style="padding-left:18px;margin:12px 0 0">
+            <li style="margin:10px 0"><a href="https://www.unmannedsystemstechnology.com/expo/hybrid-drones/" rel="noopener noreferrer">Unmanned Systems Technology — Hybrid drones &amp; propulsion overview</a></li>
+            <li style="margin:10px 0"><a href="https://harrisaerial.com/carrier-drones/carrier-h6-hybrid/" rel="noopener noreferrer">Harris Aerial — Carrier H6 Hybrid (product reference)</a></li>
+            <li style="margin:10px 0"><a href="https://skyfront.com/perimeter-8" rel="noopener noreferrer">Skyfront — Perimeter 8 long-endurance drone</a></li>
+            <li style="margin:10px 0"><a href="https://www.yangdaonline.com/yangda-yd6-1600l-gas-electric-hybrid-hexacopter/" rel="noopener noreferrer">YANGDA — YD6 fuel-electric hybrid</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Compact engines &amp; flight control</h3>
+          <ul style="padding-left:18px;margin:12px 0 0">
+            <li style="margin:10px 0"><a href="https://www.unmannedsystemstechnology.com/company/inf-inject/da50/" rel="noopener noreferrer">INF Inject / Desert Aircraft — DA-50 EFI UAV engine</a></li>
+            <li style="margin:10px 0"><a href="https://www.sdewes.org/jsdewes/pid12.0505" rel="noopener noreferrer">JSDEWES — Hybrid IC-electric multirotor feasibility study</a></li>
+            <li style="margin:10px 0"><a href="https://docs.px4.io/" rel="noopener noreferrer">PX4 Autopilot — flight-control documentation</a></li>
+            <li style="margin:10px 0"><a href="https://ardupilot.org/ardupilot/" rel="noopener noreferrer">ArduPilot — open-source autopilot documentation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="note warn rv" style="margin-top:28px"><strong>Research-status note.</strong> Nothing on this page should be read as a validated AgniLift result. Figures reported by third parties describe their own systems, not ours. Our own specifications will be published only after appropriate testing and validation.</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <span class="mono rv" style="display:inline-block;margin-bottom:20px">Collaborate</span>
+      <h2 class="rv">Collaborate on the research</h2>
+      <p class="lead rv">We welcome research institutions, propulsion specialists and engineering partners interested in these questions.</p>
+      <div class="btn-row center rv"><a class="btn btn-p" href="contact.html">Discuss a collaboration <span class="ar" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-          <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-            <defs><linearGradient id="agl2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-            <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl2)"/>
-            <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-          </svg>
-          <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+          <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg2)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0D1520" opacity=".72"/></svg>
+          <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
         </a>
-        <p>Developing compact engine-powered and hybrid UAV technologies in India.</p>
-        <p class="footer-tag">Compact Power. Longer Missions.</p>
+        <p style="margin-top:18px;max-width:40ch">Developing compact engine-powered and hybrid UAV technologies in India.</p>
+        <div class="tagline">Compact Power. Longer Missions.</div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
-      </div>
+      <div><h5>Explore</h5><ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-disclaimer">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
-      <p class="footer-copy">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
-    </div>
+    <p class="disc">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
+    <p class="cp">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>

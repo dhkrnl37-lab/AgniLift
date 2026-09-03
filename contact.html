@@ -5,161 +5,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | AgniLift UAV Technologies</title>
 <meta name="description" content="Contact AgniLift UAV Technologies to discuss research collaboration, agricultural, industrial or logistics applications, component supply, academic partnership or institutional enquiries.">
-<meta name="theme-color" content="#E7EEF7">
+<meta name="theme-color" content="#0A1018">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contact | AgniLift UAV Technologies">
-<meta property="og:description" content="Let's explore what can fly further — start a conversation with AgniLift UAV Technologies.">
+<meta property="og:description" content="Contact AgniLift UAV Technologies to discuss research collaboration, agricultural, industrial or logistics applications, component supply, academic partnership or institutional enquiries.">
 <meta property="og:site_name" content="AgniLift UAV Technologies">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-      <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-        <defs><linearGradient id="agl1" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-        <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl1)"/>
-        <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-      </svg>
-      <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+      <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0A1018" opacity=".72"/></svg>
+      <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-        <li class="nav-cta-item"><a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a></li>
-      </ul>
+    <nav class="links" id="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="technology.html">Technology</a>
+      <a href="applications.html">Applications</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="on" aria-current="page">Contact</a>
+      <span class="navcta"><a class="btn btn-p" href="contact.html">Discuss a Collaboration</a></span>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
-<div class="nav-backdrop"></div>
+<div class="scrim" id="scrim"></div>
 
 <main id="main">
-
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Contact</p>
-      <h1>Let's Explore What Can Fly Further</h1>
-      <p>Whether you are a researcher, a field operator, a manufacturer or a potential collaborator, we would value the conversation.</p>
+  <section class="phero">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's explore what can fly further</h1>
+      <p class="lead">Whether you are a researcher, a field operator, a manufacturer or a potential collaborator, we would value the conversation.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container split" style="align-items:start">
-
-      <div class="prose">
-        <h2 style="margin-top:0">Start a conversation</h2>
-        <p>We are an early-stage research and development initiative and read every genuine enquiry.</p>
-        <p class="mono-label">Enquiries</p>
-        <p>Send us a message with the form — it reaches our inbox directly, and we reply by email.</p>
-        <p class="mono-label">Location</p>
-        <p>India</p>
-        <div class="note flag"><strong>Please do not submit classified, export-controlled, operationally sensitive or confidential information through this form.</strong></div>
+  <section class="sect">
+    <div class="wrap show" style="align-items:start">
+      <div class="show-copy rv">
+        <h2 class="h-md">Start a conversation</h2>
+        <p class="lead" style="margin-top:16px">We are an early-stage research and development initiative and read every genuine enquiry.</p>
+        <div style="margin-top:28px"><span class="mlabel">Enquiries</span><p style="margin-top:8px">Send us a message with the form — it reaches our inbox directly, and we reply by email.</p></div>
+        <div style="margin-top:22px"><span class="mlabel">Location</span><p style="margin-top:8px">India</p></div>
+        <div class="note warn"><strong>Please do not submit classified, export-controlled, operationally sensitive or confidential information through this form.</strong></div>
       </div>
-
-      <div class="form-card">
-        <form id="contact-form" novalidate>
-          <input type="hidden" name="access_key" value="d46faf3d-528c-4947-8314-7e7f089c586a">
-          <input type="hidden" name="subject" value="New AgniLift website enquiry">
-          <input type="hidden" name="from_name" value="AgniLift Website">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-name">Full name <span class="req" aria-hidden="true">*</span></label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+      <div class="show-media">
+        <div class="panel">
+          <form id="contact-form" novalidate>
+            <input type="hidden" name="access_key" value="d46faf3d-528c-4947-8314-7e7f089c586a">
+            <input type="hidden" name="subject" value="New AgniLift website enquiry">
+            <input type="hidden" name="from_name" value="AgniLift Website">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+            <div class="frow">
+              <div class="field"><label for="cf-name">Full name <span class="req" aria-hidden="true">*</span></label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="cf-org">Organization <span class="req" aria-hidden="true">*</span></label><input id="cf-org" name="organization" type="text" autocomplete="organization" required></div>
+            </div>
+            <div class="frow">
+              <div class="field"><label for="cf-email">Email address <span class="req" aria-hidden="true">*</span></label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="cf-phone">Phone number <span style="color:var(--faint);font-weight:400">(optional)</span></label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
             </div>
             <div class="field">
-              <label for="cf-org">Organization <span class="req" aria-hidden="true">*</span></label>
-              <input id="cf-org" name="organization" type="text" autocomplete="organization" required>
+              <label for="cf-interest">Area of interest <span class="req" aria-hidden="true">*</span></label>
+              <select id="cf-interest" name="interest" required>
+                <option value="" selected disabled>Select an area…</option>
+                <option>Research collaboration</option><option>Agriculture</option><option>Industrial application</option>
+                <option>Logistics</option><option>Component supply</option><option>Academic partnership</option>
+                <option>Investment</option><option>Government or institutional enquiry</option><option>Careers</option><option>Other</option>
+              </select>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-email">Email address <span class="req" aria-hidden="true">*</span></label>
-              <input id="cf-email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="cf-phone">Phone number <span style="color:var(--text-dim);font-weight:400">(optional)</span></label>
-              <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
-            </div>
-          </div>
-          <div class="field">
-            <label for="cf-interest">Area of interest <span class="req" aria-hidden="true">*</span></label>
-            <select id="cf-interest" name="interest" required>
-              <option value="" selected disabled>Select an area…</option>
-              <option>Research collaboration</option>
-              <option>Agriculture</option>
-              <option>Industrial application</option>
-              <option>Logistics</option>
-              <option>Component supply</option>
-              <option>Academic partnership</option>
-              <option>Investment</option>
-              <option>Government or institutional enquiry</option>
-              <option>Careers</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" required placeholder="Tell us a little about your interest or the challenge you're exploring."></textarea>
-          </div>
-          <button class="btn btn-primary btn-block" type="submit">Send Enquiry</button>
-          <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span> are required. We use your details only to respond to your enquiry.</p>
-          <div id="form-status" class="form-status" aria-live="polite"></div>
-        </form>
+            <div class="field"><label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label><textarea id="cf-message" name="message" required placeholder="Tell us a little about your interest or the challenge you're exploring."></textarea></div>
+            <button class="btn btn-p btn-block" type="submit">Send enquiry</button>
+            <p class="fnote">Fields marked <span class="req" aria-hidden="true">*</span> are required. We use your details only to respond to your enquiry.</p>
+            <div id="form-status" class="fstatus" aria-live="polite"></div>
+          </form>
+        </div>
       </div>
-
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-          <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-            <defs><linearGradient id="agl2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-            <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl2)"/>
-            <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-          </svg>
-          <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+          <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg2)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0D1520" opacity=".72"/></svg>
+          <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
         </a>
-        <p>Developing compact engine-powered and hybrid UAV technologies in India.</p>
-        <p class="footer-tag">Compact Power. Longer Missions.</p>
+        <p style="margin-top:18px;max-width:40ch">Developing compact engine-powered and hybrid UAV technologies in India.</p>
+        <div class="tagline">Compact Power. Longer Missions.</div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
-      </div>
+      <div><h5>Explore</h5><ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-disclaimer">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
-      <p class="footer-copy">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
-    </div>
+    <p class="disc">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
+    <p class="cp">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>

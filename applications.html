@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Applications | AgniLift UAV Technologies</title>
 <meta name="description" content="Potential mission areas for AgniLift's engine-powered and hybrid UAV research: agriculture, survey and mapping, industrial inspection, remote logistics, disaster response, environmental observation and defence-support operations.">
-<meta name="theme-color" content="#E7EEF7">
+<meta name="theme-color" content="#0A1018">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Applications | AgniLift UAV Technologies">
@@ -13,207 +13,194 @@
 <meta property="og:site_name" content="AgniLift UAV Technologies">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-      <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-        <defs><linearGradient id="agl1" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-        <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl1)"/>
-        <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-      </svg>
-      <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+      <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0A1018" opacity=".72"/></svg>
+      <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="applications.html" class="active" aria-current="page">Applications</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta-item"><a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a></li>
-      </ul>
+    <nav class="links" id="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="technology.html">Technology</a>
+      <a href="applications.html" class="on" aria-current="page">Applications</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <span class="navcta"><a class="btn btn-p" href="contact.html">Discuss a Collaboration</a></span>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
-<div class="nav-backdrop"></div>
+<div class="scrim" id="scrim"></div>
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Applications</p>
-      <h1>UAV Technology for Demanding Missions</h1>
-      <p>Extended endurance and practical payload capacity could support a range of field operations. The areas below are potential directions for our research.</p>
-      <div class="note flag" style="max-width:74ch">These are <strong>potential application areas under research</strong>, not claims of deployed or commercially available capability. Any operation would be subject to testing, validation and applicable regulatory approvals.</div>
+  <section class="phero">
+    <div class="wrap">
+      <span class="eyebrow">Applications</span>
+      <h1>UAV technology for demanding missions</h1>
+      <p class="lead">Extended endurance and practical payload capacity could support a range of field operations. The areas below are potential directions for our research.</p>
+      <div class="note warn" style="max-width:76ch">These are <strong>potential application areas under research</strong>, not claims of deployed or commercially available capability. Any operation would be subject to testing, validation and applicable regulatory approvals.</div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container grid" style="gap:22px">
+  <section class="sect">
+    <div class="wrap grid" style="gap:20px">
 
-      <!-- Agriculture -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21c0-6 3-10 9-10-1 6-4 10-9 10zM12 21c0-5-3-8-8-8 1 5 3 8 8 8z"/></svg></div>
-          <h3>Agriculture</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Large fields and repeated passes can require long working time, frequent battery changes and support equipment.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Precision spraying, seeding, crop monitoring and transport of agricultural materials.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Longer sorties could reduce interruptions, helping operators cover more area within a working window.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Spray tanks and nozzles, spreaders, multispectral and RGB cameras.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c0-6 3-10 9-10-1 6-4 10-9 10zM12 21c0-5-3-8-8-8 1 5 3 8 8 8z"/></svg></div>
+            <h3 class="h-md">Agriculture</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Large fields and repeated passes can require long working time, frequent battery changes and support equipment.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Precision spraying, seeding, crop monitoring and transport of agricultural materials.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Longer sorties could reduce interruptions, helping operators cover more area within a working window.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Spray tanks and nozzles, spreaders, multispectral and RGB cameras.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
         </div>
       </article>
 
-      <!-- Survey and mapping -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg></div>
-          <h3>Survey &amp; mapping</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Mapping large or remote areas can require many flights and significant time in the field.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Long-duration aerial data collection for land, mining, construction and environmental assessment.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Greater time aloft could allow more ground to be covered per flight, improving data continuity.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Mapping cameras, LiDAR, and positioning systems for accurate georeferencing.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
-        </div>
-      </article>
-
-      <!-- Industrial inspection -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg></div>
-          <h3>Industrial inspection</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Infrastructure such as power lines, pipelines and solar sites can extend over long, difficult-to-reach corridors.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Infrastructure observation, corridor inspection, mapping and operation around remote industrial sites.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Longer routes could be inspected in fewer flights, reducing repositioning and downtime.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>High-resolution and thermal cameras, zoom optics and sensor gimbals.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg></div>
+            <h3 class="h-md">Survey &amp; mapping</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Mapping large or remote areas can require many flights and significant time in the field.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Long-duration aerial data collection for land, mining, construction and environmental assessment.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Greater time aloft could allow more ground to be covered per flight, improving data continuity.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Mapping cameras, LiDAR, and positioning systems for accurate georeferencing.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
         </div>
       </article>
 
-      <!-- Remote logistics -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
-          <h3>Remote logistics</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Difficult terrain and limited infrastructure can make ground transport slow, costly or unreliable.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Transport of equipment, supplies and essential materials across remote or difficult terrain.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Range and payload together determine how far useful loads can be carried between stops.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Secured cargo modules and temperature-aware carriers for sensitive items.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
-        </div>
-      </article>
-
-      <!-- Disaster response -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Disaster response</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Emergencies demand rapid awareness and support in areas where infrastructure may be damaged or absent.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Situational awareness, emergency supply delivery, communications support and search assistance.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Sustained time on station could support continuous observation and coordination during a response.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Cameras, thermal sensors, small supply modules and communications relays.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg></div>
+            <h3 class="h-md">Industrial inspection</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Infrastructure such as power lines, pipelines and solar sites can extend over long, difficult-to-reach corridors.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Infrastructure observation, corridor inspection, mapping and operation around remote industrial sites.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Longer routes could be inspected in fewer flights, reducing repositioning and downtime.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>High-resolution and thermal cameras, zoom optics and sensor gimbals.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
         </div>
       </article>
 
-      <!-- Environmental observation -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div>
-          <h3>Environmental observation</h3>
-        </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Monitoring forests, water bodies and land change often spans wide areas over repeated visits.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Long-duration observation for conservation, land-use and environmental-assessment research.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Extended flights could improve spatial coverage and consistency of collected data.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Multispectral, thermal and RGB imaging, and air- or environment-sampling instruments.</p></div>
-          <div class="field-span"><p class="mono-label">Research status</p><p><span class="pill blue">Early research · not deployed</span></p></div>
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
+            <h3 class="h-md">Remote logistics</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Difficult terrain and limited infrastructure can make ground transport slow, costly or unreliable.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Transport of equipment, supplies and essential materials across remote or difficult terrain.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Range and payload together determine how far useful loads can be carried between stops.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Secured cargo modules and temperature-aware carriers for sensitive items.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
         </div>
       </article>
 
-      <!-- Defence support -->
-      <article class="card app-card reveal">
-        <div class="app-head">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></div>
-          <h3>Defence support</h3>
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 class="h-md">Disaster response</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Emergencies demand rapid awareness and support where infrastructure may be damaged or absent.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Situational awareness, emergency supply delivery, communications support and search assistance.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Sustained time on station could support continuous observation and coordination during a response.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Cameras, thermal sensors, small supply modules and communications relays.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
         </div>
-        <div class="app-fields">
-          <div><p class="mono-label">Mission challenge</p><p>Support operations can require endurance and reliable logistics in remote or difficult environments.</p></div>
-          <div><p class="mono-label">Potential UAV role</p><p>Authorized reconnaissance, logistics, communications relay, border observation and search-and-rescue support.</p></div>
-          <div><p class="mono-label">Why endurance matters</p><p>Longer time aloft could support sustained observation and communications in support roles.</p></div>
-          <div><p class="mono-label">Relevant payload examples</p><p>Observation sensors, communications relays and supply modules for support tasks.</p></div>
-          <div class="field-span"><p class="mono-label">Scope &amp; status</p><p><span class="pill flame">Support roles only</span> AgniLift focuses on non-weaponized support capabilities — logistics, reconnaissance, communications relay and search-and-rescue — subject to applicable laws and approvals. <span class="pill blue">Early research · not deployed</span></p></div>
+      </article>
+
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div>
+            <h3 class="h-md">Environmental observation</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Monitoring forests, water bodies and land change often spans wide areas over repeated visits.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Long-duration observation for conservation, land-use and environmental-assessment research.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Extended flights could improve spatial coverage and the consistency of collected data.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Multispectral, thermal and RGB imaging, and environment-sampling instruments.</p></div>
+            <div class="full"><span class="mlabel">Research status</span><p><span class="chip b">Early research · not deployed</span></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card rv">
+        <div class="appblk">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></div>
+            <h3 class="h-md">Defence support</h3>
+          </div>
+          <div class="appfields">
+            <div><span class="mlabel">Mission challenge</span><p>Support operations can require endurance and reliable logistics in remote or difficult environments.</p></div>
+            <div><span class="mlabel">Potential UAV role</span><p>Authorized reconnaissance, logistics, communications relay, border observation and search-and-rescue support.</p></div>
+            <div><span class="mlabel">Why endurance matters</span><p>Longer time aloft could support sustained observation and communications in support roles.</p></div>
+            <div><span class="mlabel">Payload examples</span><p>Observation sensors, communications relays and supply modules for support tasks.</p></div>
+            <div class="full"><span class="mlabel">Scope &amp; status</span><p><span class="chip a">Support roles only</span> &nbsp;<span class="chip b">Early research · not deployed</span></p><p style="margin-top:10px">AgniLift focuses on non-weaponized support capabilities — logistics, reconnaissance, communications relay and search-and-rescue — subject to applicable laws and approvals.</p></div>
+          </div>
         </div>
       </article>
 
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Have a mission in mind?</h2>
-        <p style="margin:0 auto 24px; max-width:60ch">If your organization faces an endurance or payload challenge, we would value the conversation as we shape our research priorities.</p>
-        <a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a>
-      </div>
+  <section class="cta">
+    <div class="wrap">
+      <span class="mono rv" style="display:inline-block;margin-bottom:20px">Collaborate</span>
+      <h2 class="rv">Have a mission in mind?</h2>
+      <p class="lead rv">If your organization faces an endurance or payload challenge, we would value the conversation as we shape our research priorities.</p>
+      <div class="btn-row center rv"><a class="btn btn-p" href="contact.html">Discuss a collaboration <span class="ar" aria-hidden="true">→</span></a></div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-          <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-            <defs><linearGradient id="agl2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-            <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl2)"/>
-            <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-          </svg>
-          <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+          <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg2)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0D1520" opacity=".72"/></svg>
+          <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
         </a>
-        <p>Developing compact engine-powered and hybrid UAV technologies in India.</p>
-        <p class="footer-tag">Compact Power. Longer Missions.</p>
+        <p style="margin-top:18px;max-width:40ch">Developing compact engine-powered and hybrid UAV technologies in India.</p>
+        <div class="tagline">Compact Power. Longer Missions.</div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
-      </div>
+      <div><h5>Explore</h5><ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-disclaimer">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
-      <p class="footer-copy">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
-    </div>
+    <p class="disc">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
+    <p class="cp">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>

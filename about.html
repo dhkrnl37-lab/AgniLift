@@ -5,88 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | AgniLift UAV Technologies</title>
 <meta name="description" content="AgniLift UAV Technologies is an Indian research-led initiative exploring compact engine-powered and hybrid unmanned aerial vehicles — our mission, vision and values.">
-<meta name="theme-color" content="#E7EEF7">
+<meta name="theme-color" content="#0A1018">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About | AgniLift UAV Technologies">
-<meta property="og:description" content="Building an Indian UAV research company around compact engine-powered and hybrid propulsion.">
+<meta property="og:description" content="AgniLift UAV Technologies is an Indian research-led initiative exploring compact engine-powered and hybrid unmanned aerial vehicles — our mission, vision and values.">
 <meta property="og:site_name" content="AgniLift UAV Technologies">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-      <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-        <defs><linearGradient id="agl1" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-        <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl1)"/>
-        <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-      </svg>
-      <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+      <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0A1018" opacity=".72"/></svg>
+      <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="about.html" class="active" aria-current="page">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta-item"><a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a></li>
-      </ul>
+    <nav class="links" id="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="technology.html">Technology</a>
+      <a href="applications.html">Applications</a>
+      <a href="research.html">Research</a>
+      <a href="about.html" class="on" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+      <span class="navcta"><a class="btn btn-p" href="contact.html">Discuss a Collaboration</a></span>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
-<div class="nav-backdrop"></div>
+<div class="scrim" id="scrim"></div>
 
 <main id="main">
-
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">About</p>
-      <h1>Building an Indian UAV Research Company</h1>
-      <p>AgniLift UAV Technologies is an Indian research-led initiative exploring compact engine-powered and hybrid unmanned aerial vehicles.</p>
+  <section class="phero">
+    <div class="wrap">
+      <span class="eyebrow">About</span>
+      <h1>Building an Indian UAV research company</h1>
+      <p class="lead">AgniLift UAV Technologies is an Indian research-led initiative exploring compact engine-powered and hybrid unmanned aerial vehicles.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container prose" style="max-width:74ch">
-      <p>The initiative began with a practical engineering question: can compact propulsion systems help small and medium UAVs operate longer, carry useful mission payloads and work effectively in demanding field environments?</p>
-      <p>Our objective is to turn that question into tested engineering, validated prototypes and responsible real-world solutions.</p>
+  <section class="sect">
+    <div class="wrap narrow rv">
+      <p class="lead">The initiative began with a practical engineering question: can compact propulsion systems help small and medium UAVs operate longer, carry useful mission payloads and work effectively in demanding field environments?</p>
+      <p class="lead" style="margin-top:20px">Our objective is to turn that question into tested engineering, validated prototypes and responsible real-world solutions.</p>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container split">
-      <div class="card flame">
-        <span class="card-index">MISSION</span>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap grid g2 rv">
+      <div class="card pri">
+        <span class="kicker">Mission</span>
         <h3>What we are here to do</h3>
         <p>To develop dependable UAV propulsion and aircraft technologies that expand the practical possibilities of unmanned flight.</p>
       </div>
       <div class="card">
-        <span class="card-index">VISION</span>
+        <span class="kicker">Vision</span>
         <h3>Where we want to contribute</h3>
         <p>To contribute to India's UAV ecosystem through original research, responsible engineering and locally developed technical capability.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Values</p>
-        <h2>What guides our work</h2>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow">Values</span>
+        <h2 class="h-lg">What guides our work</h2>
       </div>
-      <div class="grid grid-3">
+      <div class="grid g3 rv">
         <div class="card"><h3>Engineering integrity</h3><p>Decisions grounded in physics, evidence and careful analysis.</p></div>
         <div class="card"><h3>Safety first</h3><p>Safety treated as a design requirement, not an afterthought.</p></div>
         <div class="card"><h3>Evidence over exaggeration</h3><p>We report what is demonstrated and clearly mark what is not.</p></div>
@@ -97,68 +90,53 @@
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Team</p>
-        <h2>The people behind AgniLift</h2>
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head center rv">
+        <span class="eyebrow">Team</span>
+        <h2 class="h-lg">The people behind AgniLift</h2>
       </div>
-      <div class="card" style="text-align:center; max-width:720px; margin:0 auto">
-        <div class="card-icon" style="margin:0 auto 16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 6.2a3 3 0 0 1 0 5.6M17.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></div>
-        <h3 style="margin:0 0 8px">Team information will be added as the initiative develops</h3>
-        <p style="margin:0 auto 18px; max-width:52ch">We are open to conversations with engineers, researchers and collaborators who share our interest in dependable, longer-endurance unmanned flight.</p>
-        <a class="btn btn-ghost" href="contact.html">Get in touch</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Work with us</h2>
-        <p style="margin:0 auto 24px; max-width:60ch">We welcome research institutions, engineering partners and organizations who share our interest in dependable, longer-endurance unmanned flight.</p>
-        <div class="hero-cta" style="justify-content:center">
-          <a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a>
-          <a class="btn btn-ghost" href="technology.html">Explore Our Technology</a>
-        </div>
+      <div class="panel rv" style="max-width:720px;margin:0 auto;text-align:center">
+        <div class="ico" style="margin:0 auto 18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 6.2a3 3 0 0 1 0 5.6M17.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></div>
+        <h3 class="h-md">Team information will be added as the initiative develops</h3>
+        <p class="lead" style="margin:14px auto 22px;max-width:52ch">We are open to conversations with engineers, researchers and collaborators who share our interest in dependable, longer-endurance unmanned flight.</p>
+        <a class="btn btn-g" href="contact.html">Get in touch <span class="ar" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
+  <section class="cta">
+    <div class="wrap">
+      <span class="mono rv" style="display:inline-block;margin-bottom:20px">Collaborate</span>
+      <h2 class="rv">Work with us</h2>
+      <p class="lead rv">We welcome research institutions, engineering partners and organizations who share our interest in dependable, longer-endurance unmanned flight.</p>
+      <div class="btn-row center rv">
+        <a class="btn btn-p" href="contact.html">Discuss a collaboration <span class="ar" aria-hidden="true">→</span></a>
+        <a class="btn btn-g" href="technology.html">Explore our technology</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-          <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-            <defs><linearGradient id="agl2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-            <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl2)"/>
-            <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-          </svg>
-          <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+          <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg2)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0D1520" opacity=".72"/></svg>
+          <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
         </a>
-        <p>Developing compact engine-powered and hybrid UAV technologies in India.</p>
-        <p class="footer-tag">Compact Power. Longer Missions.</p>
+        <p style="margin-top:18px;max-width:40ch">Developing compact engine-powered and hybrid UAV technologies in India.</p>
+        <div class="tagline">Compact Power. Longer Missions.</div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
-      </div>
+      <div><h5>Explore</h5><ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-disclaimer">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
-      <p class="footer-copy">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
-    </div>
+    <p class="disc">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
+    <p class="cp">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>

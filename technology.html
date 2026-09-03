@@ -4,197 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technology | AgniLift UAV Technologies</title>
-<meta name="description" content="How AgniLift is researching compact internal-combustion and hybrid propulsion for UAVs — energy density, series-hybrid and direct-drive architectures, vibration and thermal management, and flight-control integration.">
-<meta name="theme-color" content="#E7EEF7">
+<meta name="description" content="How AgniLift researches compact internal-combustion and hybrid propulsion for UAVs — energy density, series-hybrid and direct-drive architectures, vibration and thermal management, and flight-control integration.">
+<meta name="theme-color" content="#0A1018">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Technology | AgniLift UAV Technologies">
-<meta property="og:description" content="Engineering energy for unmanned flight: compact engine research, hybrid architectures, and the integration challenges AgniLift is studying.">
+<meta property="og:description" content="Engineering energy for unmanned flight — compact engine research, hybrid architectures and the integration challenges we are studying.">
 <meta property="og:site_name" content="AgniLift UAV Technologies">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-      <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-        <defs><linearGradient id="agl1" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-        <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl1)"/>
-        <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-      </svg>
-      <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+      <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0A1018" opacity=".72"/></svg>
+      <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
     </a>
-    <nav class="main-nav" aria-label="Primary">
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="technology.html" class="active" aria-current="page">Technology</a></li>
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-cta-item"><a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a></li>
-      </ul>
+    <nav class="links" id="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="technology.html" class="on" aria-current="page">Technology</a>
+      <a href="applications.html">Applications</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <span class="navcta"><a class="btn btn-p" href="contact.html">Discuss a Collaboration</a></span>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
-<div class="nav-backdrop"></div>
+<div class="scrim" id="scrim"></div>
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow">Technology</p>
-      <h1>Engineering Energy for Unmanned Flight</h1>
-      <p>AgniLift is researching how compact engines and hybrid power systems can extend the practical operating envelope of small and medium UAVs — while keeping the precise control, safety and reliability that field operations demand.</p>
+  <section class="phero">
+    <div class="wrap">
+      <span class="eyebrow">Technology</span>
+      <h1>Engineering energy for unmanned flight</h1>
+      <p class="lead">AgniLift is researching how compact engines and hybrid power systems can extend the practical operating envelope of small and medium UAVs — while keeping the precise control, safety and reliability that field operations demand.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container split">
-      <div class="prose">
-        <p class="mono-label">The core challenge</p>
-        <h2>The energy-density question</h2>
-        <p>The endurance of any aircraft depends heavily on how much usable energy it carries for each kilogram of weight. Batteries are clean, quiet and precise, and they suit a large share of UAV missions well. For operations that demand long flight times or heavier payloads, however, the weight of stored electrical energy can become a limiting factor.</p>
-        <p>Liquid fuels carry considerably more energy per kilogram than current batteries, even after accounting for the losses of a small engine. AgniLift is studying how to convert that advantage into dependable flight — an engineering problem of efficiency, control, vibration, heat and safety, not simply of adding an engine to an airframe.</p>
+  <!-- energy density -->
+  <section class="sect">
+    <div class="wrap show">
+      <div class="show-copy rv">
+        <span class="eyebrow"><span class="num">01</span> — The core challenge</span>
+        <h2 class="h-lg">The energy-density question</h2>
+        <p class="lead">The endurance of any aircraft depends heavily on how much usable energy it carries per kilogram. Batteries are clean, quiet and precise, and they suit a large share of UAV missions well. For operations demanding long flight times or heavier payloads, the weight of stored electrical energy becomes the limiting factor.</p>
+        <p class="lead" style="margin-top:16px">Liquid fuels carry considerably more energy per kilogram than current batteries, even after the losses of a small engine. Our work is converting that advantage into dependable flight — a problem of efficiency, control, vibration, heat and safety, not simply of bolting an engine to an airframe.</p>
       </div>
-      <div class="card" aria-hidden="false">
-        <p class="mono-label">Areas of active research</p>
-        <ul class="prose" style="margin-top:12px">
-          <li>Compact engine efficiency and matching</li>
-          <li>Series-hybrid power management</li>
-          <li>Direct-drive fixed-wing propulsion</li>
-          <li>Vibration isolation</li>
-          <li>Thermal management</li>
-          <li>Engine health monitoring</li>
-          <li>Flight-control integration</li>
-          <li>Fuel-system safety</li>
-          <li>Modular payload interfaces</li>
-        </ul>
+      <div class="show-media">
+        <div class="panel">
+          <div class="panel-cap">Areas of active research</div>
+          <div class="grid g2" style="gap:14px">
+            <div><span class="mlabel">Propulsion</span><p style="font-size:.94rem;margin-top:6px">Compact engine efficiency, propeller matching, hybrid power management</p></div>
+            <div><span class="mlabel">Integration</span><p style="font-size:.94rem;margin-top:6px">Vibration isolation, thermal management, engine health monitoring</p></div>
+            <div><span class="mlabel">Control</span><p style="font-size:.94rem;margin-top:6px">Flight-control integration and energy blending across the mission</p></div>
+            <div><span class="mlabel">Safety</span><p style="font-size:.94rem;margin-top:6px">Fuel-system design, failure behaviour, field-handling simplicity</p></div>
+          </div>
+          <p class="fine">Descriptions reflect intended research directions. Validated specifications will be published only after testing.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Architectures</p>
-        <h2>Two energy architectures under study</h2>
-        <p>We are investigating where each architecture is most appropriate. Neither is treated as universally superior — the right choice depends on the mission.</p>
+  <!-- architectures -->
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow"><span class="num">02</span> — Architectures</span>
+        <h2 class="h-lg">Two energy architectures under study</h2>
+        <p class="lead">We are investigating where each is most appropriate. Neither is treated as universally superior — the right choice depends on the mission.</p>
       </div>
-      <div class="grid grid-2">
-        <div class="card flame">
-          <span class="card-index">PRIMARY RESEARCH DIRECTION</span>
-          <h3>Series hybrid</h3>
-          <p>A compact engine drives a generator, which supplies electrical energy to the propulsion system and a buffer battery. Electric motors continue to fly the aircraft, preserving the fine control that multirotor and VTOL operations rely on, while the engine provides a more energy-dense source for longer missions.</p>
-          <p class="mono-label">Research focus</p>
+      <div class="grid g2 rv">
+        <div class="card pri">
+          <span class="tag">Primary</span>
+          <span class="kicker">Series hybrid</span>
+          <h3>Engine → generator → motors</h3>
+          <p>A compact engine drives a generator, which supplies electrical energy to the propulsion system and a buffer battery. Electric motors continue to fly the aircraft, preserving the fine control that multirotor and VTOL operations rely on, while the engine provides a far more energy-dense source for longer missions.</p>
+          <p style="margin-top:14px"><span class="mlabel">Research focus</span></p>
           <p>Efficient operating points, power blending between engine and buffer battery, and smooth response to gusts and rapid manoeuvres.</p>
         </div>
         <div class="card">
-          <span class="card-index">FIXED-WING ENDURANCE</span>
-          <h3>Direct drive</h3>
-          <p>A compact engine drives the aircraft's propulsion directly, an approach well established on fuel-powered fixed-wing aircraft. It is mechanically simpler and efficient in cruise, making it a candidate for long-range observation, surveying and mapping where vertical hover is not required.</p>
-          <p class="mono-label">Research focus</p>
+          <span class="kicker">Direct drive</span>
+          <h3>Fixed-wing endurance</h3>
+          <p>A compact engine drives the aircraft's propulsion directly — an approach well established on fuel-powered fixed-wing aircraft. It is mechanically simpler and efficient in cruise, making it a candidate for long-range observation, surveying and mapping where vertical hover is not required.</p>
+          <p style="margin-top:14px"><span class="mlabel">Research focus</span></p>
           <p>Engine–propeller matching, cruise efficiency, and reliable long-duration operation.</p>
         </div>
       </div>
-      <p style="margin-top:22px"><a href="index.html#prop-h">See the three-path propulsion overview →</a> A parallel-hybrid configuration, where engine and motor contribute together, is also of interest for peak-power and heavy-payload research.</p>
+      <p class="lead rv" style="margin-top:26px;max-width:70ch">A parallel-hybrid configuration, where engine and motor contribute together, is also of interest for peak-power and heavy-payload research.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Integration Challenges</p>
-        <h2>Turning an engine into a dependable aircraft</h2>
-        <p>An engine is only useful in the air if the surrounding system manages its side effects well. These integration problems are central to our research.</p>
+  <!-- integration -->
+  <section class="sect" style="padding-top:0">
+    <div class="wrap">
+      <div class="sect-head rv">
+        <span class="eyebrow"><span class="num">03</span> — Integration challenges</span>
+        <h2 class="h-lg">Turning an engine into a dependable aircraft</h2>
+        <p class="lead">An engine is only useful in the air if the surrounding system manages its side effects well. These integration problems are central to our research.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="card"><h3>Vibration management</h3><p>Engines introduce vibration that can affect sensors, cameras and structures. We are studying isolation and balancing so payloads and avionics operate cleanly.</p></div>
-        <div class="card"><h3>Thermal management</h3><p>Combustion produces heat that must be directed and dissipated. Cooling-airflow design and component placement are important research areas.</p></div>
-        <div class="card"><h3>Engine monitoring</h3><p>Continuous-duty flight benefits from health monitoring — sensing engine and generator condition to support safety and maintenance decisions.</p></div>
-        <div class="card"><h3>Flight-control integration</h3><p>The propulsion system must work with established flight-control approaches so operators keep precise, predictable handling.</p></div>
-        <div class="card"><h3>Fuel-system safety</h3><p>Safe fuel storage, delivery and handling are treated as first-order design requirements from the outset.</p></div>
-        <div class="card"><h3>Modular payload interfaces</h3><p>Standardised mechanical, power and data interfaces so a platform can carry different mission payloads with minimal rework.</p></div>
+      <div class="grid g3 rv">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 12h3l2-7 4 14 3-9 2 2h4"/></svg></div><h3>Vibration management</h3><p>Engines introduce vibration that can affect sensors, cameras and structures. We are studying isolation and balancing so payloads and avionics operate cleanly.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg></div><h3>Thermal management</h3><p>Combustion produces heat that must be directed and dissipated. Cooling-airflow design and component placement are important research areas.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Engine monitoring</h3><p>Continuous-duty flight benefits from health monitoring — sensing engine and generator condition to support safety and maintenance decisions.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></svg></div><h3>Flight-control integration</h3><p>The propulsion system must work with established flight-control approaches so operators keep precise, predictable handling.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fuel-system safety</h3><p>Safe fuel storage, delivery and handling are treated as first-order design requirements from the outset.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3l8 4-8 4-8-4 8-4zM4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div><h3>Modular payload interfaces</h3><p>Standardised mechanical, power and data interfaces so a platform can carry different mission payloads with minimal rework.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container split">
-      <div class="prose">
-        <p class="eyebrow">Open Questions</p>
-        <h2>Research questions we are working on</h2>
-        <ul>
-          <li>How can compact engines be operated efficiently and reliably under continuous UAV flight loads?</li>
-          <li>How should energy be managed between engine, generator and buffer battery across a mission?</li>
-          <li>What vibration and thermal strategies best protect sensitive payloads?</li>
-          <li>How can fuel handling and engine operation be made safe and simple for field crews?</li>
-          <li>Which missions genuinely benefit from hybrid power, and which are better served by batteries?</li>
+  <!-- questions + status -->
+  <section class="sect" style="padding-top:0">
+    <div class="wrap show">
+      <div class="show-copy rv">
+        <span class="eyebrow"><span class="num">04</span> — Open questions</span>
+        <h2 class="h-md">Research questions we are working on</h2>
+        <ul class="checks" style="grid-template-columns:1fr">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>How can compact engines run efficiently and reliably under continuous flight loads?</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>How should energy be managed between engine, generator and buffer battery?</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>What vibration and thermal strategies best protect sensitive payloads?</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>How can fuel handling be made safe and simple for field crews?</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Which missions genuinely benefit from hybrid power, and which are better served by batteries?</li>
         </ul>
       </div>
-      <div class="prose">
-        <p class="eyebrow">Where We Are</p>
-        <h2>Current development status</h2>
-        <p>AgniLift is at an early research and development stage. Our current work focuses on feasibility analysis, propulsion comparison and system definition. We are not claiming tested performance, certification or field results.</p>
-        <div class="note flag"><strong>Concepts, not products.</strong> Descriptions on this page reflect intended research directions. Specifications and validated capabilities will be published only after appropriate testing.</div>
-        <p><a href="research.html">See our research methodology and references →</a></p>
+      <div class="show-media rv">
+        <div class="panel">
+          <div class="panel-cap">Current development status</div>
+          <p class="lead" style="font-size:1.05rem">AgniLift is at an early research and development stage. Our current work focuses on feasibility analysis, propulsion comparison and system definition.</p>
+          <p style="margin-top:16px"><span class="chip b">Feasibility &amp; definition</span></p>
+          <div class="note warn" style="margin-top:24px"><strong>Concepts, not products.</strong> We are not claiming tested performance, certification or field results. Specifications will be published only after appropriate testing.</div>
+          <div class="btn-row" style="margin-top:22px"><a class="btn btn-g" href="research.html">See our research methodology <span class="ar" aria-hidden="true">→</span></a></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Interested in the propulsion research?</h2>
-        <p style="margin:0 auto 24px; max-width:58ch">We welcome conversations with propulsion specialists, component manufacturers, research institutions and engineering partners.</p>
-        <a class="btn btn-primary" href="contact.html">Discuss a Collaboration</a>
-      </div>
+  <section class="cta">
+    <div class="wrap">
+      <span class="mono rv" style="display:inline-block;margin-bottom:20px">Collaborate</span>
+      <h2 class="rv">Interested in the propulsion research?</h2>
+      <p class="lead rv">We welcome conversations with propulsion specialists, component manufacturers, research institutions and engineering partners.</p>
+      <div class="btn-row center rv"><a class="btn btn-p" href="contact.html">Discuss a collaboration <span class="ar" aria-hidden="true">→</span></a></div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="AgniLift UAV Technologies — home">
-          <svg class="logo-mark" viewBox="0 0 40 40" role="img" aria-label="AgniLift">
-            <defs><linearGradient id="agl2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
-            <path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#agl2)"/>
-            <path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#FFFFFF" opacity=".85"/>
-          </svg>
-          <span class="logo-text"><span class="logo-name">AGNILIFT</span><span class="logo-desc">UAV TECHNOLOGIES</span></span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="AgniLift UAV Technologies — home">
+          <svg viewBox="0 0 40 40" role="img" aria-label="AgniLift"><defs><linearGradient id="lg2" x1="0" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E8BFF"/><stop offset="1" stop-color="#5FD2FF"/></linearGradient></defs><path d="M20 4 L35 34 L20 27 L5 34 Z" fill="url(#lg2)"/><path d="M20 14 L27 28 L20 24.5 L13 28 Z" fill="#0D1520" opacity=".72"/></svg>
+          <span><b>AGNILIFT</b><small>UAV Technologies</small></span>
         </a>
-        <p>Developing compact engine-powered and hybrid UAV technologies in India.</p>
-        <p class="footer-tag">Compact Power. Longer Missions.</p>
+        <p style="margin-top:18px;max-width:40ch">Developing compact engine-powered and hybrid UAV technologies in India.</p>
+        <div class="tagline">Compact Power. Longer Missions.</div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
-      </div>
+      <div><h5>Explore</h5><ul><li><a href="technology.html">Technology</a></li><li><a href="applications.html">Applications</a></li><li><a href="research.html">Research</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-disclaimer">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
-      <p class="footer-copy">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
-    </div>
+    <p class="disc">AgniLift is currently a research and development initiative. Conceptual illustrations and proposed applications do not represent certified or commercially available products unless explicitly stated. UAV development and operation are subject to applicable laws, testing and regulatory approvals.</p>
+    <p class="cp">© <span id="year">2026</span> AgniLift UAV Technologies · Made in India</p>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4" defer></script>
+<script src="assets/app.js?v=5" defer></script>
 </body>
 </html>
